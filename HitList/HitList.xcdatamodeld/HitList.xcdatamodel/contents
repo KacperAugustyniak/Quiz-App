@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Automatic">
+    <entity name="Answer" representedClassName=".Answer" syncable="YES">
+        <attribute name="isCorrect" attributeType="Boolean" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="aQRelation" maxCount="1" deletionRule="Nullify" destinationEntity="Question" inverseName="qARelation" inverseEntity="Question" syncable="YES"/>
+    </entity>
+    <entity name="Question" representedClassName=".Question" syncable="YES">
+        <attribute name="explanation" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="helpUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="questionNo" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="text" attributeType="String" syncable="YES"/>
+        <relationship name="qARelation" optional="YES" toMany="YES" minCount="1" deletionRule="Nullify" ordered="YES" destinationEntity="Answer" inverseName="aQRelation" inverseEntity="Answer" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Answer" positionX="288" positionY="-7" width="128" height="58"/>
+        <element name="Question" positionX="108" positionY="-18" width="108" height="118"/>
+    </elements>
+</model>
